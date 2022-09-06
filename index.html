@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <title>Product Page</title>
+</head>
+<body>
+    <main class="container">
+
+        <nav class="navbar">
+
+            <div class="menu-toggle navbar-item">
+                <div class="hamburger">
+                    <b></b>
+                    <b></b>
+                    <b></b>
+                </div>
+            </div>
+            <div class="site-logo">
+                scarelli's
+            </div>
+            <div class="menu-cart navbar-item">Bag<sup>3</sup></div>
+        </nav>
+
+        <div class="product-wrapper">
+            <figure class="product-img">
+                <img src="jacket.png" alt="">
+            </figure>
+            <div class="product-info">
+                <div class="product-description">
+                    <div class="product-title">Alofi Performace Stretch Jacket</div>
+                    <div class="product-price">R$650,00</div>
+                    <div class="product-color">Color: Combat Khaki</div>
+                    <div class="product-size">
+                        <label><input type="radio" name="select"><span>42</span></label>
+                        <label><input type="radio" name="select"><span>44</span></label>
+                        <label><input type="radio" name="select"><span>46</span></label>
+                        <label><input type="radio" name="select"><span>48</span></label>
+                        <label><input type="radio" name="select"><span>50</span></label>
+                    </div>
+                </div>
+                <div class="product-add-to-cart">Add to bag</div>
+            </div>
+        </div>
+    </main>
+    <script>
+        gsap.from(".navbar", 2, { y: -100, ease: Expo.easeInOut });
+        gsap.from(".product-info", 3, { x: 600, ease: Expo.easeInOut });
+        gsap.from(".product-img", 3, { y: 600, ease: Expo.easeInOut });
+        gsap.from(".product-add-to-cart", 2, {
+            opacity: 0,
+            y: 600,
+            ease: Expo.easeInOut,
+            delay: 2,
+        });
+        TweenMax.staggerFrom(
+            ".product-description > div",
+            1,
+            { opacity: 0, x: 200, ease: Expo.easeInOut, delay: 1.4 },
+            0.05
+        );
+    </script>
+</body>
+</html>
